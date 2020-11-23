@@ -5,7 +5,7 @@
   background-repeat: no-repeat;
   box-shadow: -0.1em 0 0.4em rgb(0, 0, 0, 0.5);
 
-  width: 50%;
+  width: 45%;
   height: 70px;
   border-radius: 40px;
 
@@ -24,7 +24,8 @@
 #food,
 #calories,
 #img,
-#btn {
+#btn,
+#btn-2 {
   background-position: 12px 10px;
   background-repeat: no-repeat;
   background-size: 25px;
@@ -68,6 +69,18 @@
   height: 45px;
   margin-left: 10px;
 }
+#btn-2 {
+  background-image: url("./icons/add.svg");
+  background-color: #fff;
+  background-position: 32px 20px;
+  border-radius: 40px;
+  vertical-align: middle;
+  width: 100px;
+  height: 70px;
+  margin-left: 10px;
+  margin-top: 4.8%;
+}
+
 .second-form {
   position: absolute;
   left: 12%;
@@ -108,3 +121,4 @@
   font-size: 50px;
   text-align: center;
 }
+
