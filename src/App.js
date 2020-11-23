@@ -13,7 +13,7 @@ const ListApp = () => {
 
   const [input, setInput] = useState({});
 
-  const [search, setSearch] = useState();
+  const [search, setSearch] = useState('chicken');
 
   const [addFood, setaddFood] = useState([input]);
 
@@ -28,7 +28,7 @@ const ListApp = () => {
     );
     const data = await response.json();
     setFood(data.hits);
-    console.log(data.hits);
+   
   };
   
   const onChangeHandler = (e) => {
