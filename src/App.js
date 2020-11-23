@@ -13,22 +13,23 @@ const ListApp = () => {
 
   const [input, setInput] = useState({});
 
-  const [search, setSearch] = useState('chicken');
+  const [search, setSearch] = useState();
 
   const [addFood, setaddFood] = useState([input]);
 
   useEffect(() => {
     getData();
+    console.log(search);
     getFood();
   }, []);
 
-  const getData = async () => {
+  const getData = async e => {
     const response = await fetch(
       `https://api.edamam.com/search?q=${search}&app_id=${API_ID}&app_key=${API_KEY}`
     );
     const data = await response.json();
     setFood(data.hits);
-   
+    
   };
   
   const onChangeHandler = (e) => {
@@ -38,14 +39,9 @@ const ListApp = () => {
   const onChangeSearchHandler = (e) => {
     let value = e.target.value;
     setSearch(value);
+    console.log(search);
   };
-  const onKeyUpHandler = (e) => {
-    if (e.keyCode === 13 && e.target.id === "search") {
-      getData();
-      e.target.value = "";
-      e.preventDefault();
-    }
-  };
+  
   
   const addNewFoodToStorage = (e) => {
     let newFoods = getFoodsFromStorage();
@@ -54,7 +50,7 @@ const ListApp = () => {
 
     localStorage.setItem("newFoods", JSON.stringify(newFoods));
     getFood();
-    input.title.value = "";
+    
 
     e.preventDefault();
   };
@@ -83,13 +79,14 @@ const ListApp = () => {
             Write the food <br /> you want
           </h1>
           <input
-            onKeyUp={onKeyUpHandler}
+            
             onChange={onChangeSearchHandler}
             name="search"
             id="search"
             type="text"
             placeholder="Search for recipe..."
           ></input>
+          <button onClick={(e) => getData(e.preventDefault())} id="btn-2"></button>
         </div>
         <div className="second-form">
           <h2>
@@ -147,3 +144,4 @@ const ListApp = () => {
 };
 
 export default ListApp;
+
