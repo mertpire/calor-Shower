@@ -2,7 +2,7 @@
 ```
 https://github.com/mertpire/calorShower.git
 ```
-##### 2. 
+##### 2. Install
 ```
 npm install react --save
 ```
