@@ -1,5 +1,4 @@
 import React from "react";
-import "./assets/foods.css";
 const Foods = ({ title, calories, img }) => {
   const style = {
     margin: "5%",
