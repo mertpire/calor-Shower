@@ -19,7 +19,6 @@ const ListApp = () => {
 
   useEffect(() => {
     getData();
-    console.log(search);
     getFood();
   }, []);
 
